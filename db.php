@@ -1,9 +1,10 @@
 <?php
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- * Developer: riyad
+ * Author: MD. ANWAR JAHID
+ * Email: ajr.jahid@gmail.com
+ * Facebook: www.fb.com/ringkubd
+ * Twitter: ringkubd
+ * Skype: ringkubd
  */
 include_once 'config.php';
 class connection{
