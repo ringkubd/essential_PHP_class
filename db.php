@@ -16,6 +16,7 @@ class connection{
     public function __construct() {
         $this->connectDb();
     }
+    //connect database
     private function connectDb(){
         $this->link=new mysqli($this->dbhost,$this->dbuser,$this->dbpassword, $this->dbname);
         if(!$this->link){
@@ -23,6 +24,7 @@ class connection{
             return FALSE;
         }
     }
+    //insert data
     public function query($query){
         $insert_row=$this->link->query($query)or 
         die($this->link->error.__LINE__);
@@ -32,6 +34,7 @@ class connection{
             echo 'Wrong';
         }
     }
+    //view data
     public function select($query){
         $result=$this->link->query($query)or 
         die($this->link->error.__LINE__);
@@ -40,5 +43,26 @@ class connection{
       } else {
         return false;
       }
+    }
+    
+    //update
+    public function update($query){
+        $update=$this->link->query($query)or 
+            die($this->link->error.__LINE__);
+        if($update->num_rows>o){
+            return $update;
+        }else{
+            return FALSE;
+        }
+    }
+    // Delete data
+ public function delete($query){
+    $delete_row = $this->link->query($query) or 
+        die($this->link->error.__LINE__);
+    if($delete_row){
+        return $delete_row;
+    } else {
+        return false;
+        }
     }
 }
